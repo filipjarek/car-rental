@@ -21,6 +21,7 @@
     
 ## Features
 List the ready features here:
+- User login and registration
 - Selection of displayed language (Polish/English)
 - App theme selection (light/dark)
 - Creating, editing and deleting: users, employees, customers, vehicles, invoices, transactions
@@ -32,6 +33,21 @@ List the ready features here:
 
 
 ## Screenshots
+![Login](./Screenshots/Screenshot_2.png)
+![Register](./Screenshots/Screenshot_1.png)
+![Polish language](./Screenshots/Screenshot_3.png)
+![English language](./Screenshots/Screenshot_11.png)
+![Dark theme](./Screenshots/Screenshot_4.png)
+![Employee list](./Screenshots/Screenshot_5.png)
+![Invoice list](./Screenshots/Screenshot_12.png)
+![Vehicle list ](./Screenshots/Screenshot_10.png)
+![Vehicle add](./Screenshots/Screenshot_9.png)
+![Vehicle edit](./Screenshots/Screenshot_8.png)
+![Transactions](./Screenshots/Screenshot_14.png)
+![New transaction](./Screenshots/Screenshot_13.png)
+![Dashboard](./Screenshots/Screenshot_15.png)
+![Generated invoice](./Screenshots/Screenshot_16.png)
+![Users](./Screenshots/Screenshot_6.png)
 
 
 ## Setup
