@@ -76,7 +76,7 @@
 
         <div class="md:w-1/2 px-3 ">
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="idcard">
-                    {{ __('ID Card') }}
+                    {{ __('Id Card') }}
                 </label>
                     <input class="appearance-none block w-full bg-slate-200 dark:bg-gray-800 border border-gray-300  dark:border-gray-700 rounded-md font-semibold text-base dark:text-white   tracking-widest  active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition duration-700 ease-in-out" 
                     id="idcard" type="text" maxlength="9" class="form-control" class="form-control" @error('idcard') is-invalid @enderror" name="idcard" value="{{ $customer->idcard }}"  autocomplete="idcard" >

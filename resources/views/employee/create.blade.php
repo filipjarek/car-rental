@@ -76,7 +76,7 @@
                        
                     </select>
                         @error('gender') <span class="invalid-feedback" role="alert"> <strong>{{ $message }}</strong> </span> @enderror
-                            <p class="text-red text-xs italic py-2">{{ __('Please fill out this field') }}.</p>
+                            <p class="text-red text-xs italic py-2">{{ __('Please select an option') }}.</p>
             </div>
         
             <div class="md:w-1/2 px-3 ">

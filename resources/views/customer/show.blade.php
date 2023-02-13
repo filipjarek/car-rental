@@ -58,7 +58,7 @@
                     {{ __('Gender') }}
                 </label>
                     <input class="appearance-none block w-full bg-slate-200 dark:bg-gray-800 border border-gray-300  dark:border-gray-700 rounded-md font-semibold text-base dark:text-white   tracking-widest"  id="gender"  type="text"  class="form-control" name="gender" class="form-control" 
-                    disabled value="@if ($employee->gender  == 'male') {{ __('male') }} @else {{ __('female') }} @endif">
+                    disabled value="@if ($customer->gender  == 'male') {{ __('male') }} @else {{ __('female') }} @endif">
             </div>
 
         <div class="md:w-1/2 px-3 ">

@@ -41,7 +41,7 @@
         <div class="-mx-3 md:flex mb-6 ">
             <div class="md:w-1/2 px-3 mb-6 md:mb-0 ">
                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="name">
-                    {{ __('Name') }}
+                    {{ __('name') }}
                 </label>
                     <input class="appearance-none block w-full bg-slate-200 dark:bg-gray-800 border border-gray-300  dark:border-gray-700 rounded-md font-semibold text-base dark:text-white tracking-widest" id="name" value="{{ $vehicle->name }}" disabled  type="text"  class="form-control" name="name">
             

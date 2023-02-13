@@ -51,7 +51,7 @@
         
             <div class="md:w-1/2 px-3 ">
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="email">
-                    {{ __('Date of issue') }}
+                    {{ __('Date of issue') }} *
                 </label>
                     <input class="appearance-none block w-full bg-slate-200 dark:bg-gray-800 border border-gray-300  dark:border-gray-700 rounded-md font-semibold text-base dark:text-white   tracking-widest  active:bg-gray-900 focus:outline-none focus:border-gray-300 focus:ring focus:ring-gray-300 disabled:opacity-25 transition duration-700 ease-in-out" 
                     id="invoice_date" type="date" class="form-control" @error('invoice_date') is-invalid @enderror" name="invoice_date" value="{{ old('invoice_date') }}" required autocomplete="invoice_date" autofocus placeholder="email@gmail.com">

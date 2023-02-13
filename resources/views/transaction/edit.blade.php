@@ -224,7 +224,7 @@
                     <tr>
 
                         <td class="px-6 py-4 whitespace-nowrap text-sm bg-slate-100 dark:bg-slate-800 border border-gray-300  dark:border-gray-700  ">
-                        {{ __('Price Finee per day') }}:
+                        {{ __('Price Fine per day') }}:
                         </td>
 
                         <td class="px-6 py-4 whitespace-nowrap text-sm bg-slate-100 dark:bg-slate-800 border border-gray-300  dark:border-gray-700">

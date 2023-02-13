@@ -42,7 +42,7 @@
     <div class="-mx-3 md:flex mb-6 ">
             <div class="md:w-1/2 px-3 mb-6 md:mb-0 ">
                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="fullname">
-                    {{ __('Fullname') }} *
+                    {{ __('Fullname') }} 
                     </label>
                     <input class="appearance-none block w-full bg-slate-200 dark:bg-gray-800 border border-gray-300  dark:border-gray-700 rounded-md font-semibold text-base dark:text-white   tracking-widest  active:bg-gray-900 focus:outline-none focus:border-gray-300 focus:ring focus:ring-gray-300 disabled:opacity-25 transition duration-700 ease-in-out" 
                     id="fullname" type="text" maxlength="50"  class="form-control" class="form-control" @error('fullname') is-invalid @enderror" name="fullname" value="{{ $employee->fullname }}" required autocomplete="fullname" >
