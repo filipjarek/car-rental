@@ -1,4 +1,4 @@
-# Car-rental
+# Vehicle-rental
 > A web application connected to a database was created for use in a car rental company. In order to improve the stages related to the rental of vehicles, to facilitate the collection and processing of information.
 
 ## Table of Contents
