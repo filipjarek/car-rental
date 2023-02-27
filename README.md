@@ -49,8 +49,45 @@ List the ready features here:
 ![Generated invoice](./Screenshots/Screenshot_16.png)
 ![Users](./Screenshots/Screenshot_6.png)
 
-
 ## Setup
+#### Step 1 : Clone the project
+```
+$ git clone https://github.com/filipjarek/vehicle-rental
+```
+#### Step 2 : Change current directory
+```
+$ cd vehicle-rental
+```
+#### Step 3 : Generate key
+```
+$ php artisan key:generate
+```
+#### Step 4 : Configuration
+```
+Copy .env.example file to .env on the root folder.
+Set the database (mysql) in .env file db_name, db_username and db_password.
+```
+#### Step 5 : Install dependencies
+```
+$ composer install
+$ npm install
+$ npm run build
+```
+#### Step 6 : Setup database
+```
+$ php artisan migrate:fresh --seed
+```
+#### Step 7 : Run the project
+```
+$ php artisan serve
+```
+Open link in your browser: http://localhost:8000:
+
+#### Admin credentails
+```
+email: admin@gmail.com
+password: password
+```
     
     
 
