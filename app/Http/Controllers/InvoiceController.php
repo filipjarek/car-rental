@@ -22,9 +22,7 @@ class InvoiceController extends Controller
     public function index()
     {
         return view("invoice.index", [
-
             'invoices' => Invoice::paginate(5)
-
         ]);
     }
 
@@ -36,12 +34,10 @@ class InvoiceController extends Controller
     public function create(Invoice $invoice)
     {
         return view("invoice.create", [
-
             'transactions' => Transaction::latest()->get(),
             'companies' => Company::latest()->get(),
             'invoices' => Invoice::all(),
             'invoice' => $invoice
-
         ]);
     }
 
@@ -67,10 +63,8 @@ class InvoiceController extends Controller
     public function show(Invoice $invoice): View
     {
         return view("invoice.show", [
-
             'invoice' => $invoice,
             'transactions' => Transaction::all(),
-
         ]);
     }
 
@@ -83,12 +77,10 @@ class InvoiceController extends Controller
     public function edit(Invoice $invoice): View
     {
         return view("invoice.edit", [
-
             'transactions' => Transaction::all(),
             'companies' => Company::all(),
             'invoices' => Invoice::all(),
             'invoice' => $invoice
-
         ]);
     }
 
@@ -101,7 +93,6 @@ class InvoiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $invoice = Invoice::find($id);
         $invoice->number_invoice = $request->number_invoice;
         $invoice->transaction_id = $request->transaction_id;
@@ -114,6 +105,7 @@ class InvoiceController extends Controller
         $invoice->service = $request->service;
         $invoice->VAT = $request->VAT;
         $invoice->save();
+
         Alert::toast(__('Invoice Updated Successfully'), 'success')->autoClose(3000);
         return redirect(route('invoice.index'));
     }
@@ -126,7 +118,6 @@ class InvoiceController extends Controller
      */
     public function destroy($id)
     {
-
         Invoice::find($id)->delete();
         Alert::toast(__('Invoice Deleted Successfully'), 'success')->autoClose(3000);
         return redirect(route('invoice.index'));
@@ -134,12 +125,10 @@ class InvoiceController extends Controller
 
     public function generate($invoice_id)
     {
-
         if (Invoice::where('id', $invoice_id)->exists()) {
             $invoices = Invoice::find($invoice_id);
 
             $data = [
-
                 'invoices' => $invoices,
             ];
 

@@ -12,7 +12,6 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -20,16 +19,13 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-
         $users = User::select("*")
             ->whereNotNull('status')
             ->orderBy('status', 'DESC')
             ->paginate(5);
 
         return view('user.index', compact('users'), [
-
-            'employees' => Employee::all(),
-
+            'employees' => Employee::all()
         ]);
     }
 
@@ -42,9 +38,7 @@ class UserController extends Controller
     public function show(User $user): View
     {
         return view("user.show", [
-
             'user' => $user
-
         ]);
     }
 
@@ -57,11 +51,9 @@ class UserController extends Controller
     public function edit(User $user): View
     {
         return view("user.edit", [
-
             'employees' => Employee::all(),
             'users' => User::all(),
             'user' => $user
-
         ]);
     }
 

@@ -21,10 +21,8 @@ class EmployeeController extends Controller
     public function index()
     {
         return view("employee.index", [
-
             'employees' => employee::paginate(5),
             'users' => User::all(),
-
         ]);
     }
 
@@ -36,10 +34,8 @@ class EmployeeController extends Controller
     public function create(Employee $employee)
     {
         return view("employee.create", [
-
             'employees' => Employee::all(),
             'employee' => $employee
-
         ]);
     }
 
@@ -65,9 +61,7 @@ class EmployeeController extends Controller
     public function show(Employee $employee): View
     {
         return view("employee.show", [
-
             'employee' => $employee
-
         ]);
     }
 
@@ -80,10 +74,8 @@ class EmployeeController extends Controller
     public function edit(Employee $employee)
     {
         return view("employee.edit", [
-
             'employees' => Employee::all(),
             'employee' => $employee
-
         ]);
     }
 
@@ -118,7 +110,6 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-
         Employee::find($id)->delete();
         Alert::toast(__('Employee Deleted Successfully'), 'success')->autoClose(3000);
         return redirect(route('employee.index'));

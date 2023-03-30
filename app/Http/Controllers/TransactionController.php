@@ -15,7 +15,6 @@ use App\Models\Employee;
 
 class TransactionController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -24,9 +23,7 @@ class TransactionController extends Controller
     public function index()
     {
         return view("transaction.index", [
-
             'transactions' => Transaction::paginate(5),
-
         ]);
     }
 
@@ -38,11 +35,9 @@ class TransactionController extends Controller
     public function create()
     {
         return view("transaction.create", [
-
             'employees' => Employee::latest()->get(),
             'customers' => Customer::latest()->get(),
             'vehicles' => Vehicle::where('status', 'Y')->get(),
-
         ]);
     }
 
@@ -74,6 +69,7 @@ class TransactionController extends Controller
         $vehicle = Vehicle::find($request->vehicle_id);
         $vehicle->status = 'N';
         $vehicle->save();
+
         Alert::toast(__('Transaction Added Successfully'), 'success')->autoClose(3000);
         return redirect(route('transaction.index'));
     }
@@ -93,11 +89,9 @@ class TransactionController extends Controller
         $sum = $diff * ($transaction->finee);
 
         return view('transaction.edit', [
-
             'transaction' => $transaction,
             'diff' => $diff,
             'sum' => $sum
-
         ]);
     }
 
@@ -110,7 +104,6 @@ class TransactionController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $transaction = Transaction::find($id);
         $transaction->rent_status = 'Y';
         $transaction->return_day = now();
@@ -118,6 +111,7 @@ class TransactionController extends Controller
         $vehicle = Vehicle::find($transaction->vehicle_id);
         $vehicle->status = 'Y';
         $vehicle->save();
+        
         Alert::toast(__('Transaction Updated Successfully'), 'success')->autoClose(3000);
         return redirect(route('transaction.index'));
     }

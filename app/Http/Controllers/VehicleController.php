@@ -12,7 +12,6 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class VehicleController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -22,9 +21,7 @@ class VehicleController extends Controller
     {
 
         return view("vehicle.index", [
-
             'vehicles' => vehicle::paginate(5),
-
         ]);
     }
 
@@ -36,10 +33,8 @@ class VehicleController extends Controller
     public function create(Vehicle $vehicle)
     {
         return view("vehicle.create", [
-
             'vehicles' => Vehicle::all(),
             'vehicle' => $vehicle
-
         ]);
     }
 
@@ -52,9 +47,7 @@ class VehicleController extends Controller
     public function store(StoreVehicleRequest $request)
     {
         Vehicle::create($request->validated() + [
-
             'status' => 'Y'
-
         ]);
 
         Alert::toast(__('Vehicle Added Successfully'), 'success')->autoClose(3000);
@@ -70,9 +63,7 @@ class VehicleController extends Controller
     public function show(Vehicle $vehicle): View
     {
         return view("vehicle.show", [
-
             'vehicle' => $vehicle
-
         ]);
     }
 
@@ -85,9 +76,7 @@ class VehicleController extends Controller
     public function edit(Vehicle $vehicle): View
     {
         return view('vehicle.edit', [
-
             'vehicle' => $vehicle
-
         ]);
     }
 
@@ -108,7 +97,6 @@ class VehicleController extends Controller
         $vehicle->capacity = $request->capacity;
         $vehicle->power = $request->power;
         $vehicle->save();
-
 
         Alert::toast(__('Vehicle Updated Successfully'), 'success')->autoClose(3000);
         return redirect(route('vehicle.index'));

@@ -12,13 +12,10 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class CompanyController extends Controller
 {
-
     public function index()
     {
         return view("company.index", [
-
             'companies' => Company::paginate(5)
-
         ]);
     }
 
@@ -31,10 +28,8 @@ class CompanyController extends Controller
     public function create(Company $company): View
     {
         return view("company.create", [
-
             'companies' => Company::all(),
             'company' => $company
-
         ]);
     }
 
@@ -60,9 +55,7 @@ class CompanyController extends Controller
     public function show(Company $company): View
     {
         return view("company.show", [
-
             'company' => $company
-
         ]);
     }
 
@@ -75,9 +68,7 @@ class CompanyController extends Controller
     public function edit(Company $company): View
     {
         return view('company.edit', [
-
             'company' => $company
-            
         ]);
     }
 
@@ -99,7 +90,6 @@ class CompanyController extends Controller
         $company->city = $request->city;
         $company->bank_number = $request->bank_number;
         $company->save();
-
 
         Alert::toast(__('Company Updated Successfully'), 'success')->autoClose(3000);
         return redirect(route('company.index'));

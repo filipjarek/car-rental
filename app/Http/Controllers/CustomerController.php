@@ -20,9 +20,7 @@ class CustomerController extends Controller
     public function index()
     {
         return view("customer.index", [
-
             'customers' => customer::paginate(5)
-
         ]);
     }
 
@@ -34,10 +32,8 @@ class CustomerController extends Controller
     public function create(Customer $customer)
     {
         return view("customer.create", [
-
             'customers' => Customer::all(),
             'customer' => $customer
-
         ]);
     }
 
@@ -63,9 +59,7 @@ class CustomerController extends Controller
     public function show(Customer $customer): View
     {
         return view("customer.show", [
-
             'customer' => $customer
-
         ]);
     }
 
@@ -78,10 +72,8 @@ class CustomerController extends Controller
     public function edit(Customer $customer)
     {
         return view("customer.edit", [
-
             'customers' => Customer::all(),
             'customer' => $customer
-            
         ]);
     }
 
@@ -115,7 +107,6 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-
         Customer::find($id)->delete();
         Alert::toast(__('Customer Deleted Successfully'), 'success')->autoClose(3000);
         return redirect(route('customer.index'));
