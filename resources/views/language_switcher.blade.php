@@ -15,16 +15,15 @@
         </x-slot>
 
         <x-slot name="content">
-                                 
-            @foreach (Config::get('languages') as $lang => $language)
+                    
+        @foreach (Config::get('languages') as $lang => $language)
             @if ($lang != App::getLocale())  
+
     <x-jet-dropdown-link href="{{ route('lang.switch', $lang) }}"> {{$language}}
-    
-          
                     
     </x-jet-dropdown-link> 
-    @endif 
-            @endforeach  
+            @endif 
+        @endforeach  
                               
         </x-slot>
     </x-jet-dropdown>

@@ -14,24 +14,19 @@
                 <div :class="{'dark': darkMode === true}"> 
                     <div class="flex justify-end items-center space-x-2">
 
-                        @foreach (Config::get('languages') as $lang => $language)
-                            @if ($lang != App::getLocale()) 
-                <span class="inline-flex rounded-md">
-                    <a class="float-right" href="{{ route('lang.switch', $lang) }}">
-                        <button type="button" class="inline-flex items-center px-3 py-2 border border-gray-300  dark:border-gray-500 text-sm leading-4 font-medium rounded-md  bg-slate-50 dark:bg-slate-700 dark:text-white focus:outline-none transition">                     
-                            <div> <b>{{ Config::get('languages')[App::getLocale()] }}</b> > {{$language}}</div>
-                            @endif                                                         
-                        @endforeach                                                  
-                        </button>
-                    </a>
-                </span>
+                <a href="{{ route('lang.switch', 'en') }}">
+                    <span class="flag-icon flag-icon-us"></span>
+                </a> 
+                <a href="{{ route('lang.switch', 'pl') }}">
+                    <span class="flag-icon flag-icon-pl"></span>
+                </a>
                 
-                <span class="text-sm text-gray-800 dark:text-gray-400">{{ __('Light') }}</span>
+                <span class="text-sm text-gray-800 dark:text-gray-400"><i class="fa-solid fa-sun"></i></span>
                     <label for="toggle" class="w-9 h05 flex items-center bg-gray-300 rounded-full p-1 cursor-pointer duration-300 ease-in-out dark:bg-gray-700">
                         <div class="toggle-dot w-4 h-4 bg-white rounded-full shadow-md transform duration-300 ease-in-out dark:translate-x-3"></div>
                 
                  </label>
-                <span class="text-sm text-gray-400 dark:text-gray-50">{{ __('Dark') }}</span>
+                <span class="text-sm text-gray-400 dark:text-gray-50"><i class="fa-solid fa-moon"></i></span>
                     <input id="toggle" type="checkbox" class="hidden" :value="darkMode" @change="darkMode = !darkMode" />
                         </div>
                     </div>
@@ -85,7 +80,7 @@
             </div>
         </div>
     
-    <footer class="text-center lg:text-center  text-gray-400 dark:text-gray-600">
+    <footer class="text-center lg:text-center text-gray-400 dark:text-gray-600">
         <div class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300 dark:border-gray-700">
             <span><strong>© 2023 {{ __('Design by') }} - Filip Jarek</strong></span>    
         </div>

@@ -27,7 +27,6 @@
             @livewire('navigation-menu')
             @include('sweetalert::alert')
             
-
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-slate-50 dark:bg-slate-800 ">
@@ -40,14 +39,12 @@
             <!-- Page Content -->
             <main>
                 {{ $slot }}
+                @include('components/footer')
             </main>
         </div>
 
-        
-        
-        
         @stack('modals')
         @livewireScripts
-        
+       
     </body>
 </html>
