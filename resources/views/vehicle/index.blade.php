@@ -32,7 +32,6 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-6">
             <div class="bg-slate-400 overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="p-6 sm:px-20 bg-slate-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 ">
-    
             
     <div class="mt-0 text-2xl">
         <div>
@@ -44,7 +43,8 @@
         @can('isAdmin')
         <div class=" inline-flex place-items-center px-4 py-4">               
             <a class="float-right" href="{{ route('vehicle.create') }}">
-                <button type="button" class="transform motion-safe:hover:scale-110 shadow overflow-hidden inline-flex items-center px-4 py-3 bg-gray-300 dark:bg-gray-700 border border-transparent rounded-md font-semibold text-xs dark:text-white uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black disabled:opacity-25 transition duration-700 ease-in-out"> {{ __('Add') }}
+                <button type="button" class="transform motion-safe:hover:scale-110 shadow overflow-hidden inline-flex items-center px-4 py-3 bg-gray-300 dark:bg-gray-700 border border-transparent rounded-md font-semibold text-xs dark:text-white uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black disabled:opacity-25 transition duration-700 ease-in-out">
+                    {{ __('Add') }}
                 </button>
             </a>
         </div>   
@@ -130,9 +130,9 @@
 
                         <td class="px-6 py-4 whitespace-nowrap text-sm dark:bg-slate-700">
                             @if ($vehicle->status == 'Y')
-                                    <span class="px-2 inline-flex leading-5 font-semibold rounded-md bg-green-200 dark:bg-green-600">{{ __('Available') }}</span>
+                                <span class="px-2 inline-flex leading-5 font-semibold rounded-md bg-green-200 dark:bg-green-600">{{ __('Available') }}</span>
                             @else
-                                    <span class="px-2 inline-flex leading-5 font-semibold rounded-md bg-red-200 dark:bg-red-600">{{ __('Inaccessible') }}</span>
+                                <span class="px-2 inline-flex leading-5 font-semibold rounded-md bg-red-200 dark:bg-red-600">{{ __('Inaccessible') }}</span>
                             @endif                                              
                         </td>
 
@@ -144,7 +144,7 @@
                                         <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                                     </button>
                                 </a>
-                                @can('isAdmin')            
+                                         
                                 <a href="{{ route('vehicle.edit', $vehicle->id) }}">
                                     <button type="button" class="w-6 mr-2 transform text-gray-400 hover:text-purple-600 hover:scale-110">
                                         <i class="fa-solid fa-pen-to-square fa-lg"></i>
@@ -157,11 +157,16 @@
                                         <i class="fa-regular fa-trash-can fa-lg"></i>
                                     </button>                                                   
                                 </form>
-                                @endcan
+                            
                                 @empty
-                    @endforelse   
-                    </tr>                                 
-                </tbody>               
+                                <h2 class="text-sm mb-8 font-semibold uppercase justify-center flex">
+                                    No Vehicles
+                                </h2>
+                            </div>
+                        </td>
+                    </tr>    
+                    @endforelse                                
+                </tbody>   
             </table>
                                                
                     <div class="px-6 py-4 whitespace-nowrap text-sm divide-y divide-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700">

@@ -42,4 +42,22 @@ class AuthenticationTest extends TestCase
 
         $this->assertGuest();
     }
+
+    public function test_user_cannot_view_a_login_form_when_authenticated()
+    {
+        $user = User::factory()->make();
+
+        $response = $this->actingAs($user)->get('/login');
+
+        $response->assertRedirect('/dashboard');
+    }
+
+    public function test_user_cannot_view_a_register_form_when_authenticated()
+    {
+        $user = User::factory()->make();
+
+        $response = $this->actingAs($user)->get('/register');
+
+        $response->assertRedirect('/dashboard');
+    }
 }
