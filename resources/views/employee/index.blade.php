@@ -31,29 +31,28 @@
     <div class="py-3">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-6">
             <div class="bg-slate-400 overflow-hidden shadow-xl sm:rounded-lg">
-                <div class="p-6 sm:px-20 bg-slate-100 dark:bg-gray-800 border border-gray-300  dark:border-gray-700 ">
+                <div class="p-6 sm:px-20 bg-slate-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700">
     
             
-    <div class="mt-0 text-2xl ">
+    <div class="mt-0 text-2xl">
         <div>
             <div>
                 <div>
-    
-    
 
     <div class="container">
          <div class="col=auto">
 
-         <div class=" inline-flex place-items-center px-4 py-4  ">               
+         <div class="inline-flex place-items-center px-4 py-4">               
             <a class="float-right" href="{{ route('employee.create') }}">
-                <button type="button"  class="  transform motion-safe:hover:scale-110 shadow overflow-hidden inline-flex items-center px-4 py-3 bg-gray-300 dark:bg-gray-700 border border-transparent rounded-md font-semibold text-xs dark:text-white uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black disabled:opacity-25 transition duration-700 ease-in-out" > {{ __('Add') }}
+                <button type="button" class="transform motion-safe:hover:scale-110 shadow overflow-hidden inline-flex items-center px-4 py-3 bg-gray-300 dark:bg-gray-700 border border-transparent rounded-md font-semibold text-xs dark:text-white uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black disabled:opacity-25 transition duration-700 ease-in-out">
+                    {{ __('Add') }}
                 </button>
             </a>
         </div>       
     </div>
          
-        <div class=" rounded-md shadow overflow-hidden  ">
-            <table class=" rounded-md min-w-full divide-y divide-gray-200 dark:divide-gray-800 w-full border border-gray-300 dark:border-gray-500">
+        <div class="rounded-md shadow overflow-hidden">
+            <table class="rounded-md min-w-full divide-y divide-gray-200 dark:divide-gray-800 w-full border border-gray-300 dark:border-gray-500">
                 <thead>
                     <tr>
                         <th scope="col" width="50" class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-left text-xs font-medium uppercase tracking-wider">
@@ -86,10 +85,9 @@
                     </tr>
                 </thead>
 
-                <tbody class="bg-white  divide-y divide-gray-200 dark:divide-gray-800">
-                        @foreach ($employees as $employee)
-                    <tr>
-                                        
+                <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-800">
+                    @forelse ($employees as $employee)
+                    <tr>        
                         <td class="px-6 py-4 whitespace-nowrap text-sm dark:bg-slate-700">
                             {{ $employee->id }}
                         </td>
@@ -140,12 +138,18 @@
                                     </button>     
                                 </form>
 
-                        @endforeach
-                    </tr>                  
+                                @empty
+                                <h2 class="text-sm mb-8 font-semibold uppercase justify-center flex">
+                                    No Employees
+                                </h2>
+                            </div>
+                        </td>
+                    </tr>    
+                    @endforelse                   
                 </tbody>
             </table>
                             
-                    <div class="px-6 py-4 whitespace-nowrap text-sm  divide-y divide-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700">
+                    <div class="px-6 py-4 whitespace-nowrap text-sm divide-y divide-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700">
                         {{ $employees->links() }} 
                     </div>
                             
