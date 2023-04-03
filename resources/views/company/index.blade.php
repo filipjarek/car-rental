@@ -44,7 +44,7 @@
 
         <div class="inline-flex place-items-center px-4 py-4">               
             <a class="float-right" href="{{ route('company.create') }}">
-                <button type="button" class="  transform motion-safe:hover:scale-110 shadow overflow-hidden inline-flex items-center px-4 py-3 bg-gray-300 dark:bg-gray-700 border border-transparent rounded-md font-semibold text-xs dark:text-white uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black disabled:opacity-25 transition duration-700 ease-in-out">
+                <button type="button" class="transform motion-safe:hover:scale-110 shadow overflow-hidden inline-flex items-center px-4 py-3 bg-gray-300 dark:bg-gray-700 border border-transparent rounded-md font-semibold text-xs dark:text-white uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black disabled:opacity-25 transition duration-700 ease-in-out">
                      {{ __('Add') }}
                 </button>
             </a>
@@ -77,8 +77,8 @@
                     </tr>
                 </thead>
 
-                <tbody class="bg-white  divide-y divide-gray-200 dark:divide-gray-800">
-                        @forelse ($companies as $company)
+                <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-800">
+                    @forelse ($companies as $company)
                     <tr>
                         <td class="px-6 py-4 whitespace-nowrap text-sm dark:bg-slate-700">
                             {{ $company->id }}
@@ -119,9 +119,14 @@
                                     </button>                                                 
                                 </form>
 
-                            @empty
-                        @endforelse   
-                    </tr>                                 
+                                @empty
+                                <h2 class="text-sm mb-8 font-semibold uppercase justify-center flex">
+                                    No Company
+                                </h2>
+                            </div>
+                        </td>
+                    </tr>   
+                    @endforelse                       
                 </tbody>               
             </table>
                                                
