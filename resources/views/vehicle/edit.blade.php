@@ -38,10 +38,9 @@
     <form method="POST" action="{{ route('vehicle.update', $vehicle->id) }}" enctype="multipart/form-data">
     @csrf
 
-            
     <div class="dark:bg-slate-800 border border-gray-300 dark:border-gray-700 rounded-lg bg-slate-100 shadow-md px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
 
-    <div class="-mx-3 md:flex mb-6">
+        <div class="-mx-3 md:flex mb-6">
             <div class="md:w-1/2 px-3 mb-6 md:mb-0">
                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="name">
                     {{ __('name') }} 
@@ -58,10 +57,10 @@
                 <select class="appearance-none block w-full bg-slate-200 dark:bg-gray-800 border border-gray-300  dark:border-gray-700 rounded-md font-semibold text-base dark:text-white tracking-widest active:bg-gray-900 focus:outline-none focus:border-gray-300 focus:ring focus:ring-gray-300 disabled:opacity-25 transition duration-700 ease-in-out" 
                     id="category" class="form-control" @error('category') is-invalid @enderror" name="category" value="{{ $vehicle->category }}" required autocomplete="category">                     
                        
-                            <option value="car" <?= $vehicle->category === 'car' ? 'selected' : '' ?>>{{ __('car') }}</option>
-                            <option value="motorcycle" <?= $vehicle->category === 'motorcycle' ? 'selected' : '' ?>>{{ __('motorcycle') }}</option>
+                        <option value="car" <?= $vehicle->category === 'car' ? 'selected' : '' ?>>{{ __('car') }}</option>
+                        <option value="motorcycle" <?= $vehicle->category === 'motorcycle' ? 'selected' : '' ?>>{{ __('motorcycle') }}</option>
                        
-                    </select>
+                </select>
                         @error('category') <span class="invalid-feedback" role="alert"> <strong>{{ $message }}</strong> </span> @enderror
                             
             </div>
@@ -107,7 +106,6 @@
                         @error('power') <span class="invalid-feedback" role="alert"> <strong>{{ $message }}</strong> </span> @enderror
             </div>
         </div>
-
     </div>
 
             <div class="flex items-center justify-end px-4 py-3 text-right sm:px-6">    
@@ -127,8 +125,8 @@
     </form>
 
         <div class="mt-0 text-2xl">
-            <div>
-        
+                    
+                    <div>
                 </div>
             </div>
         </div>

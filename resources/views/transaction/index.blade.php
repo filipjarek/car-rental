@@ -12,7 +12,7 @@
                     <li>
                         <div class="flex items-center">
                         <i class="fa-solid fa-angle-right fa-sm text-gray-400"></i>
-                            <a class="ml-1 text-sm font-medium text-gray-900  md:ml-2 dark:text-gray-100">
+                            <a class="ml-1 text-sm font-medium text-gray-900 md:ml-2 dark:text-gray-100">
                                 {{ __('Transaction List') }}
                             </a>
                         </div>

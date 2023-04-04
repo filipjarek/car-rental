@@ -7,35 +7,33 @@
                 <div class="hidden space-x-8 sm:ml-10 sm:flex">
 
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                    <b>{{ __('Dashboard') }}</b>
+                        <b>{{ __('Dashboard') }}</b>
                     </x-jet-nav-link>
 
                     <x-jet-nav-link href="{{ route('transaction.index') }}" :active="request()->routeIs('transaction.index')">
-                    <b>{{ __('Transactions') }}</b>
+                        <b>{{ __('Transactions') }}</b>
                     </x-jet-nav-link>
 
                     <x-jet-nav-link href="{{ route('invoice.index') }}" :active="request()->routeIs('invoice.index')">
-                    <b>{{ __('Invoices') }}</b>
+                        <b>{{ __('Invoices') }}</b>
                     </x-jet-nav-link>
                     
                     <x-jet-nav-link href="{{ route('vehicle.index') }}" :active="request()->routeIs('vehicle.index')">
-                    <b>{{ __('Vehicles') }}</b>
+                        <b>{{ __('Vehicles') }}</b>
                     </x-jet-nav-link>
 
                     <x-jet-nav-link href="{{ route('customer.index') }}" :active="request()->routeIs('customer.index')">
-                    <b>{{ __('Customers') }}</b>
+                        <b>{{ __('Customers') }}</b>
                     </x-jet-nav-link>
 
                     @can('isAdmin')
-                    
                     <x-jet-nav-link href="{{ route('user.index') }}" :active="request()->routeIs('user.index')">
-                    <b>{{ __('Users') }}</b>
+                        <b>{{ __('Users') }}</b>
                     </x-jet-nav-link>
 
                     <x-jet-nav-link href="{{ route('employee.index') }}" :active="request()->routeIs('employee.index')">
-                    <b>{{ __('Employees') }}</b>
+                        <b>{{ __('Employees') }}</b>
                     </x-jet-nav-link>
-
                     @endcan
 
                 </div>
@@ -46,12 +44,14 @@
                 <div x-data="{'darkMode': false}"x-init="darkMode = JSON.parse(localStorage.getItem('darkMode')); $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))">
                     <div :class="{'dark': darkMode === true}"> 
                         <div class="flex justify-end items-center space-x-2">
+
                         <a href="{{ route('lang.switch', 'en') }}">
                             <span class="flag-icon flag-icon-us"></span>
                         </a> 
                         <a href="{{ route('lang.switch', 'pl') }}">
                             <span class="flag-icon flag-icon-pl"></span>
                         </a>
+
                 <span class="text-sm text-gray-800 dark:text-gray-400"><i class="fa-solid fa-sun"></i></span>
                     <label for="toggle" class="w-9 h05 flex items-center bg-gray-300 rounded-full p-1 cursor-pointer duration-300 ease-in-out dark:bg-gray-700">
                         <div class="toggle-dot w-4 h-4 bg-white rounded-full shadow-md transform duration-300 ease-in-out dark:translate-x-3"></div>             
@@ -86,29 +86,28 @@
                             </x-jet-dropdown-link>    
                             
                             @can('isAdmin')
-
                             <div class="border-t border-gray-300 dark:border-gray-500"></div>  
 
                             <x-jet-dropdown-link href="{{ route('company.index') }}">
                                 {{ __('Company') }}           
                             </x-jet-dropdown-link>
-                         
                             @endcan
                             
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                                <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
-                                    {{ __('API Tokens') }}
-                                </x-jet-dropdown-link>
+                            <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
+                                {{ __('API Tokens') }}
+                            </x-jet-dropdown-link>
                             @endif
 
                             <div class="border-t border-gray-300 dark:border-gray-500"></div>
 
                             <form method="POST" action="{{ route('logout') }}" x-data>
-                                @csrf
-
+                            @csrf
                                 <x-jet-dropdown-link href="{{ route('logout') }}"
-                                         @click.prevent="$root.submit();">
-                                         <div class="text-red-500 dark:text-red-500"><b> {{ __('Sign out') }}</b> </div>
+                                    @click.prevent="$root.submit();">
+                                    <div class="hover:dark:text-red-500 hover:text-red-500">
+                                        <b> {{ __('Sign out') }}</b>
+                                    </div>
                                 </x-jet-dropdown-link>
                             </form>
 
@@ -145,16 +144,15 @@
                 </x-jet-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                    <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
-                        {{ __('API Tokens') }}
-                    </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
+                    {{ __('API Tokens') }}
+                </x-jet-responsive-nav-link>
                 @endif
 
                 <form method="POST" action="{{ route('logout') }}" x-data>
-                    @csrf
-
+                @csrf
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
-                                   @click.prevent="$root.submit();">
+                        @click.prevent="$root.submit();">
                         {{ __('Log Out') }}
                     </x-jet-responsive-nav-link>
                 </form>

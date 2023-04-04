@@ -31,7 +31,7 @@
     <div class="py-3">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-6">
             <div class="bg-slate-400 overflow-hidden shadow-xl sm:rounded-lg">
-                <div class="p-6 sm:px-20 bg-slate-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 ">
+                <div class="p-6 sm:px-20 bg-slate-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700">
             
     <div class="mt-0 text-2xl">
         <div>
@@ -41,7 +41,7 @@
     <div class="container">
         <div class="col=auto">
         @can('isAdmin')
-        <div class=" inline-flex place-items-center px-4 py-4">               
+        <div class="inline-flex place-items-center px-4 py-4">               
             <a class="float-right" href="{{ route('vehicle.create') }}">
                 <button type="button" class="transform motion-safe:hover:scale-110 shadow overflow-hidden inline-flex items-center px-4 py-3 bg-gray-300 dark:bg-gray-700 border border-transparent rounded-md font-semibold text-xs dark:text-white uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black disabled:opacity-25 transition duration-700 ease-in-out">
                     {{ __('Add') }}

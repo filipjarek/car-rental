@@ -42,34 +42,30 @@
                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="employee_id">
                     {{ __('Employee') }}
                 </label>
-                    <input class="appearance-none block w-full bg-slate-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md font-semibold text-base dark:text-white tracking-widest" id="employee_id" type="text" class="form-control" name="employee_id" disabled value="@if($user->hasEmployee()){{ $user->employee->fullname }}@endif">
-            
+                <input class="appearance-none block w-full bg-slate-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md font-semibold text-base dark:text-white tracking-widest" id="employee_id" type="text" class="form-control" name="employee_id" disabled value="@if($user->hasEmployee()){{ $user->employee->fullname }}@endif">
             </div>
 
-        <div class="md:w-1/2 px-3">
-            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="name">
-                {{ __('User Name') }}
-            </label>
+            <div class="md:w-1/2 px-3">
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="name">
+                    {{ __('User Name') }}
+                </label>
                 <input class="appearance-none block w-full bg-slate-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md font-semibold text-base dark:text-white tracking-widest" id="name" type="text" class="form-control" name="name" disabled value="{{ $user->name}}">
-            
             </div>
         </div>
 
         <div class="-mx-3 md:flex mb-6">
             <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="email">
-                {{ __('Email') }}
-            </label>
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="email">
+                    {{ __('Email') }}
+                </label>
                 <input class="appearance-none block w-full bg-slate-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md font-semibold text-base dark:text-white tracking-widest" id="email" type="email" class="form-control" name="email" disabled value="{{ $user->email}}">
-            
             </div>
 
-        <div class="md:w-1/2 px-3">
-            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="role">
-                {{ __('Role') }}
-            </label>
+            <div class="md:w-1/2 px-3">
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="role">
+                    {{ __('Role') }}
+                </label>
                 <input class="appearance-none block w-full bg-slate-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md font-semibold text-base dark:text-white tracking-widest" id="role" type="text" class="form-control" name="role" disabled value="{{ $user->role}}">
-            
             </div>
         </div>
 
@@ -78,16 +74,14 @@
                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="created_at">
                     {{ __('Created') }}
                 </label>
-                    <input class="appearance-none block w-full bg-slate-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md font-semibold text-base dark:text-white tracking-widest" id="created_at" type="text" class="form-control" name="created_at" class="form-control" disabled value="{{ $user->created_at}}">
-           
+                <input class="appearance-none block w-full bg-slate-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md font-semibold text-base dark:text-white tracking-widest" id="created_at" type="text" class="form-control" name="created_at" class="form-control" disabled value="{{ $user->created_at}}">
             </div>
 
             <div class="md:w-1/2 px-3">
                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="updated_at">
                     {{ __('Updated') }}
                 </label>
-                    <input class="appearance-none block w-full bg-slate-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md font-semibold text-base dark:text-white tracking-widest" id="updated_at" type="text" class="form-control" name="updated_at" class="form-control" disabled value="{{ $user->updated_at}}">
-            
+                <input class="appearance-none block w-full bg-slate-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md font-semibold text-base dark:text-white tracking-widest" id="updated_at" type="text" class="form-control" name="updated_at" class="form-control" disabled value="{{ $user->updated_at}}">
             </div>
         </div>
     </div>
@@ -101,8 +95,8 @@
             </div>
 
         <div class="mt-0 text-2xl">
-            <div>
-        
+                
+                    <div>
                 </div>
             </div>
         </div>

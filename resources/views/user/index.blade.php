@@ -72,7 +72,6 @@
                         <th scope="col" class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-left text-xs font-medium uppercase tracking-wider">
                             {{ __('Actions') }}
                         </th>
-
                     </tr>
                 </thead>
 
@@ -84,7 +83,7 @@
                         </td>
 
                         <td class="px-6 py-4 whitespace-nowrap text-sm dark:bg-slate-700">
-                              @if($user->hasEmployee()){{ $user->employee->fullname }}@endif
+                            @if($user->hasEmployee()){{ $user->employee->fullname }}@endif
                         </td>
 
                         <td class="px-6 py-4 whitespace-nowrap text-sm dark:bg-slate-700">

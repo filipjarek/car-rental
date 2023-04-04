@@ -60,7 +60,6 @@
             </div>
         </div>
 
-
         <div class="-mx-3 md:flex mb-6">
             <div class="md:w-full px-3">
                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="phone">
@@ -110,12 +109,11 @@
                     id="bank_number" type="text" maxlength="255" class="form-control" class="form-control" @error('bank_number') is-invalid @enderror" name="bank_number" value="{{ $company->bank_number }}" required autocomplete="name">
                         @error('bank_number') <span class="invalid-feedback" role="alert"> <strong>{{ $message }}</strong> </span> @enderror
             </div>
-        
-    </div>
+        </div>
 
             <div class="flex items-center justify-end px-4 py-3 text-right sm:px-6">    
                 <a href="{{ route('company.create') }}">
-                    <button type="button" class=" shadow overflow-hidden inline-flex items-center px-4 py-3 bg-gray-300 dark:bg-gray-700 border border-transparent rounded-md font-semibold text-xs dark:text-white uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black disabled:opacity-25 transition duration-700 ease-in-out">
+                    <button type="button" class="shadow overflow-hidden inline-flex items-center px-4 py-3 bg-gray-300 dark:bg-gray-700 border border-transparent rounded-md font-semibold text-xs dark:text-white uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black disabled:opacity-25 transition duration-700 ease-in-out">
                         {{ __('Cancel') }}
                     </button>
                 </a>

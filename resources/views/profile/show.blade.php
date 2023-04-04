@@ -25,20 +25,18 @@
     <div class="py-5">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-6">
             <div class="bg-gray-700 overflow-hidden shadow-xl sm:rounded-lg">
-                <div class="p-6 sm:px-20 bg-slate-100 dark:bg-gray-800 border border-gray-300  dark:border-gray-700  dark:text-black ">
+                <div class="p-6 sm:px-20 bg-slate-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 dark:text-black">
     
-    <div class="mt-0 text-2xl ">
+    <div class="mt-0 text-2xl">
         <div>
             </div>
                 </div>
-        @include('sweetalert::alert')
+    @include('sweetalert::alert')
         
-   
     <div>
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             @if (Laravel\Fortify\Features::canUpdateProfileInformation())
                 @livewire('profile.update-profile-information-form')
-
                 <x-jet-section-border />
             @endif
 
@@ -46,7 +44,6 @@
                 <div class="mt-10 sm:mt-0">
                     @livewire('profile.update-password-form')
                 </div>
-
                 <x-jet-section-border />
             @endif
 

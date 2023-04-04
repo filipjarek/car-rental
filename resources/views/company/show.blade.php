@@ -33,7 +33,7 @@
         <div class="py-5">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-6">
                 <div class="bg-slate-400 overflow-hidden shadow-xl sm:rounded-lg">
-                    <div class="p-6 sm:px-20 bg-slate-100 dark:bg-gray-800 border border-gray-300  dark:border-gray-700">
+                    <div class="p-6 sm:px-20 bg-slate-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700">
             
     <form method="POST" action="{{ route('company.update', $company->id) }}" enctype="multipart/form-data">
     @csrf
@@ -102,7 +102,7 @@
 
     <div class="flex items-center justify-end px-4 py-3 text-right sm:px-6">    
                 <a href="{{ route('company.index') }}">
-                    <button type="button" class=" shadow overflow-hidden inline-flex items-center px-4 py-3 bg-gray-300 dark:bg-gray-700 border border-transparent rounded-md font-semibold text-xs dark:text-white uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black disabled:opacity-25 transition duration-700 ease-in-out">
+                    <button type="button" class="shadow overflow-hidden inline-flex items-center px-4 py-3 bg-gray-300 dark:bg-gray-700 border border-transparent rounded-md font-semibold text-xs dark:text-white uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black disabled:opacity-25 transition duration-700 ease-in-out">
                         {{ __('Close') }}
                     </button>
                 </a>
@@ -111,8 +111,8 @@
     </form>
 
         <div class="mt-0 text-2xl">
-            <div>
-
+            
+                    <div>
                 </div>
             </div>
         </div>

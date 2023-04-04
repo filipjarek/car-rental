@@ -12,7 +12,7 @@
                     <li>
                         <div class="flex items-center">
                         <i class="fa-solid fa-angle-right fa-sm text-gray-400"></i>
-                            <a class="ml-1 text-sm font-medium text-gray-900  md:ml-2 dark:text-gray-100">
+                            <a class="ml-1 text-sm font-medium text-gray-900 md:ml-2 dark:text-gray-100">
                                 {{ __('Customer List') }}
                             </a>
                         </div>
@@ -84,7 +84,7 @@
                     </tr>
                 </thead>
 
-                <tbody class="bg-white  divide-y divide-gray-200 dark:divide-gray-800">
+                <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-800">
                     @forelse ($customers as $customer)
                     <tr>
                         <td class="px-6 py-4 whitespace-nowrap text-sm dark:bg-slate-700">

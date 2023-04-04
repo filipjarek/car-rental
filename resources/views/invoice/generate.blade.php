@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-    <html lang="pl">
-        <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-                <title> {{ __('Invoice') }}</title>
+<html lang="pl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title> {{ __('Invoice') }}</title>
     <style>
         body{
             background-color: #FFFFFF; 
@@ -97,74 +97,71 @@
         }
     </style>
 </head>
-<body>
 
-    <div class="container">
-        <div class="">
+    <body>
+
+        <div class="container">
+            <div class="">
                 <div class="">
-                <h2 class="heading"> {{ __('INVOICE VAT NR') }} {{ $invoices->number_invoice }}</h2>
+                <h2 class="heading">
+                     {{ __('INVOICE VAT NR') }} {{ $invoices->number_invoice }}
+                    </h2>
                 </div>
+
                 <div class="body-section">
+                    <div class="row">
+                        <div class="col-6">          
+                            <p>{{ __('Date of issue:') }} <strong>{{ $invoices->invoice_date }}</strong></p>
+                            <p>{{ __('Vehicle rental date:') }} <strong>{{ $invoices->transaction->rent_date->format('d-m-Y') }}
+                                {{ __('to') }} {{ $invoices->transaction->return_date->format('d-m-Y') }}</strong></p>
+                            <p>{{ __('Vehicle return date:') }} <strong>{{ $invoices->transaction->return_day->format('d-m-Y') }}</strong></p>
+                            <p>{{ __('Payment method:') }} <strong>{{ $invoices->payment_method }}</strong></p>
+                            <p>{{ __('Date of payment:') }} <strong>
 
-        <div class="row">
-                <div class="col-6">          
-                <p>{{ __('Date of issue:') }} <strong>{{ $invoices->invoice_date }}</strong></p>
-                <p>{{ __('Vehicle rental date:') }} <strong>{{ $invoices->transaction->rent_date->format('d-m-Y') }}
-                        {{ __('to') }} {{ $invoices->transaction->return_date->format('d-m-Y') }}</strong></p>
-                <p>{{ __('Vehicle return date:') }} <strong>{{ $invoices->transaction->return_day->format('d-m-Y') }}</strong></p>
-                <p>{{ __('Payment method:') }} <strong>{{ $invoices->payment_method }}</strong></p>
-                <p>{{ __('Date of payment:') }} <strong>
-
-                    
-
-                    @php
-                            
-                           
-                           
-                            $stara_data = date(  $invoices->transaction->return_day->format('d-m-Y') );
-                            $nowa_data = date( ('d-m-Y'), strtotime( $stara_data .' +7 day' ));
-                        @endphp
+                            @php
+                                $stara_data = date(  $invoices->transaction->return_day->format('d-m-Y') );
+                                $nowa_data = date( ('d-m-Y'), strtotime( $stara_data .' +7 day' ));
+                            @endphp
                 
-                            {{$nowa_data}} 
+                                {{$nowa_data}} 
 
-                </strong></p>
-                <p >{{ __('Site:') }} <strong>1/1</strong></p>
+                                </strong></p>
+                            <p >{{ __('Site:') }} <strong>1/1</strong></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-        <br>
+            <br>
 
-        <div class="body-section">
-        <div class="row">
-                <div class="col-6">
+            <div class="body-section">
+                <div class="row">
+                    <div class="col-6">
 
-                    <div class="heading"><h5>{{ __('ISSUER') }}</h5></div>
+                        <div class="heading"><h5>{{ __('ISSUER') }}</h5></div>
                    
-                    <p>{{ __('Company name:') }} <strong>{{ $invoices->company->name }}</strong></p>
-                    <p>{{ __('Bank account number:') }} <strong>{{ $invoices->company->bank_number }}</strong></p>
-                    <p>{{ __('Adress:') }} <strong>{{ $invoices->company->street }} {{ $invoices->company->zip_code }} {{ $invoices->company->city }}</strong></p>
-                    <p>{{ __('NIP:') }} <strong>{{ $invoices->company->NIP }}</strong></p>
-                    <p>{{ __('Phone:') }} <strong>{{ $invoices->company->phone }}</strong></p>
+                            <p>{{ __('Company name:') }} <strong>{{ $invoices->company->name }}</strong></p>
+                            <p>{{ __('Bank account number:') }} <strong>{{ $invoices->company->bank_number }}</strong></p>
+                            <p>{{ __('Adress:') }} <strong>{{ $invoices->company->street }} {{ $invoices->company->zip_code }} {{ $invoices->company->city }}</strong></p>
+                            <p>{{ __('NIP:') }} <strong>{{ $invoices->company->NIP }}</strong></p>
+                            <p>{{ __('Phone:') }} <strong>{{ $invoices->company->phone }}</strong></p>
                     
                    
-                    <br>
+            <br>
 
-                    <div class="heading"><h5>{{ __('BUYER') }}</h5></div>
+                        <div class="heading"><h5>{{ __('BUYER') }}</h5></div>
 
-                    <p>{{ __('Fullname:') }} <strong>{{ $invoices->buyer }}</strong></p>
-                    <p>{{ __('Adress:') }} <strong>{{ $invoices->address }}</strong></p>
-                    <p>{{ __('NIP:') }} <strong>{{ $invoices->NIP }}</strong></p>
+                            <p>{{ __('Fullname:') }} <strong>{{ $invoices->buyer }}</strong></p>
+                            <p>{{ __('Adress:') }} <strong>{{ $invoices->address }}</strong></p>
+                            <p>{{ __('NIP:') }} <strong>{{ $invoices->NIP }}</strong></p>
                     
-                </div>
-            </div>
-        </div>
+                        </div>
+                    </div>
+                </div> 
 
-                    <br>
+            <br>
         
-       
-                <div class="col-4">
+            <div class="col-4">
                 <table>
                     <thead>
                             <tr>
@@ -174,7 +171,7 @@
                               
                                 <th>
                                     {{ __('The name of the service:') }}
-                                 </th>
+                                </th>
 
                                 <th>
                                     {{ __('Amount:') }}
@@ -207,7 +204,6 @@
                     </thead>
     
                     <tbody>
-                    
                             <tr>
                                 <td>
                                     1.
@@ -222,18 +218,16 @@
                                 <td>
 
                                     @php
-
                                         $earlier = new DateTime($invoices->transaction->rent_date->format('d-m-Y'));
                                         $later = new DateTime($invoices->transaction->return_date->format('d-m-Y'));
                                         $diff = $later->diff($earlier)->format("%a"); 
-                                
                                     @endphp
                         
                                         {{$diff}} 
                                 </td>
 
                                 <td>
-                                {{ __('day') }}
+                                    {{ __('day') }}
                                 </td>
 
                                 <td>
@@ -248,9 +242,7 @@
                                 <td>
 
                                     @php
-                            
                                         $suma_price = $diff * ($invoices->transaction->price) 
-
                                     @endphp
 
                                         {{number_format ($suma_price, 2)}}  
@@ -261,16 +253,14 @@
                                     @if(isset($invoices->VAT))
 
                                     @php
-
                                         $VAT = $invoices->VAT;
                                         $VAT_total_price = ($suma_price * $invoices->VAT)/100;
-
                                     @endphp
 
                                         {{number_format ($VAT_total_price, 2)}}  
 
                                     @else
-                                    0
+                                        0   
                                     @endif
 
                                 </td>
@@ -279,9 +269,7 @@
                                     @if(isset($invoices->VAT))
 
                                     @php
-                            
                                         $grandtotal_price = $VAT_total_price + $suma_price
-
                                     @endphp
 
                                     @endif
@@ -290,107 +278,88 @@
                             </tr>
 
                             <tr>
-
                                 <td colspan="0" class="text-left">
                                     2.
                                 </td>
 
                                 <td> 
-                                {{ __('Overpayment for exceeding the rental period') }}
+                                    {{ __('Overpayment for exceeding the rental period') }}
                                     
-                       
                                 </td>
 
                                 <td> 
 
-                                @php
-                            
-                                    $earlier = new DateTime($invoices->transaction->return_date->format('d-m-Y'));
-                                    $later = new DateTime($invoices->transaction->return_day->format('d-m-Y'));
-                                    $diff = $later->diff($earlier)->format("%a"); 
-                                
-                                @endphp
+                                    @php
+                                        $earlier = new DateTime($invoices->transaction->return_date->format('d-m-Y'));
+                                        $later = new DateTime($invoices->transaction->return_day->format('d-m-Y'));
+                                        $diff = $later->diff($earlier)->format("%a"); 
+                                    @endphp
                         
-                                    {{$diff}} 
+                                        {{$diff}} 
 
                                 </td>
 
                                 <td> 
-                                {{ __('day') }}
+                                    {{ __('day') }}
                                    
-
                                 </td>
 
                                 <td> 
                            
-                                @php
-                            
-                                    $suma = $diff * ($invoices->transaction->finee)
-
-                                @endphp
+                                    @php
+                                        $suma = $diff * ($invoices->transaction->finee)
+                                    @endphp
                            
-                                    {{$invoices->transaction->finee}} 
+                                        {{$invoices->transaction->finee}} 
 
                                 </td>
 
                                 <td> 
-
                                     {{ $invoices->VAT }} %  
+                                </td>
+
+                                <td> 
+
+                                    @php
+                                        $suma_finee = $diff * ($invoices->transaction->finee)
+                                    @endphp
+
+                                        {{number_format ($suma_finee, 2)}} 
 
                                 </td>
 
                                 <td> 
 
-                                @php
-                            
-                                    $suma_finee = $diff * ($invoices->transaction->finee)
+                                    @if(isset($invoices->VAT))
 
-                                @endphp
+                                    @php
+                                        $VAT = $invoices->VAT;
+                                        $VAT_total_finee = $suma_finee * $invoices->VAT/100;
+                                    @endphp
 
-                                    {{number_format ($suma_finee, 2)}} 
+                                        {{number_format ($VAT_total_finee, 2)}}  
 
-                                </td>
-
-                                <td> 
-
-                            
-                                @if(isset($invoices->VAT))
-
-                                @php
-
-                                    $VAT = $invoices->VAT;
-                                    $VAT_total_finee = $suma_finee * $invoices->VAT/100;
-
-                                @endphp
-
-                                    {{number_format ($VAT_total_finee, 2)}}  
-
-                                @else
-                                0
-                                @endif
+                                    @else
+                                        0
+                                    @endif
 
                                 </td>
 
                                 <td> 
 
-                            
-                                @if(isset($invoices->VAT))
+                                    @if(isset($invoices->VAT))
 
-                                @php
-                            
-                                    $grandtotal_finee = $VAT_total_finee +  $suma_finee
+                                    @php
+                                        $grandtotal_finee = $VAT_total_finee +  $suma_finee
+                                    @endphp
 
-                                @endphp
-
-                                @endif
-                                    {{number_format ($grandtotal_finee, 2)}} 
+                                    @endif
+                                        {{number_format ($grandtotal_finee, 2)}} 
 
                                 </td>
-
                             </tr>
 
                             <tr>
-
                                 <td colspan="5" class="text-right">
                                    {{ __('Together to pay:') }}
                                 </td>
@@ -401,47 +370,39 @@
 
                                 <td> 
 
-                                @php
-                            
-                                    $suma_end = $suma_price + $suma_finee
+                                    @php
+                                        $suma_end = $suma_price + $suma_finee
+                                    @endphp
 
-                                @endphp
-
-                                    {{number_format ($suma_end, 2)}}  
+                                        {{number_format ($suma_end, 2)}}  
 
                                 </td> 
 
                                 <td> 
-                                @if(isset($invoices->VAT))
+                                    @if(isset($invoices->VAT))
 
-                                @php
-                        
-                                    $suma_vat = $VAT_total_finee + $VAT_total_price
+                                    @php
+                                        $suma_vat = $VAT_total_finee + $VAT_total_price
+                                    @endphp
 
-                                @endphp
-
-                                @endif
+                                    @endif
                            
-                                    {{number_format ($suma_vat, 2)}}  
-                        
+                                        {{number_format ($suma_vat, 2)}}  
                         
                                 </td> 
 
                                 <td> 
 
-                                @php
-                                    $suma_total = $grandtotal_finee + $grandtotal_price
+                                    @php
+                                        $suma_total = $grandtotal_finee + $grandtotal_price
+                                    @endphp
 
-                                @endphp
+                                        {{number_format ($suma_total, 2)}} 
 
-                                    {{number_format ($suma_total, 2)}}   
                                 </td> 
-
                             </tr>
 
                             <tr>
-
-
                                 <td colspan="5" class="text-right">
                                    {{ __('Including tax:') }}
                                 </td>
@@ -452,71 +413,60 @@
 
                                 <td> 
 
-                                @php
-                            
-                                    $suma_end = $suma_price + $suma_finee
-
-                                @endphp
+                                    @php
+                                        $suma_end = $suma_price + $suma_finee
+                                    @endphp
                         
-                                    {{number_format ($suma_end, 2)}}   
+                                        {{number_format ($suma_end, 2)}}   
 
                                 </td> 
 
                                 <td> 
 
-                                @if(isset($invoices->VAT))
+                                    @if(isset($invoices->VAT))
 
-                                @php
-                        
-                                $suma_vat = $VAT_total_finee + $VAT_total_price
+                                    @php
+                                        $suma_vat = $VAT_total_finee + $VAT_total_price
+                                    @endphp
 
-                                @endphp
-
-                                @endif
+                                    @endif
                            
-                                    {{number_format ($suma_vat, 2)}}    
+                                        {{number_format ($suma_vat, 2)}}    
 
                                 </td> 
 
                                 <td> 
 
-                                @php
-
-                                    $suma_total = $grandtotal_finee + $grandtotal_price
-
-                                @endphp
+                                    @php
+                                        $suma_total = $grandtotal_finee + $grandtotal_price
+                                    @endphp
                         
-                                    {{number_format ($suma_total, 2)}} 
+                                        {{number_format ($suma_total, 2)}} 
 
                                 </td> 
-
-                                
                             </tr>
 
-                           
                             <tr>
-                            <td colspan="8" class="text-right">
-                                {{ __('To pay:') }}
-                            </td>
+                                <td colspan="8" class="text-right">
+                                    {{ __('To pay:') }}
+                                </td>
 
-                            <td> 
+                                <td> 
 
-                                @php
-
-                                    $suma_total = $grandtotal_finee + $grandtotal_price
-
-                                @endphp
+                                    @php
+                                        $suma_total = $grandtotal_finee + $grandtotal_price
+                                    @endphp
 
                                         {{number_format ($suma_total, 2)}} zł
-                            </td> 
-
-                        </tr>
+                                </td> 
+                            </tr>
 
                     <tbody>                       
                 </table>
-        
             </div>
+
         </div>      
 
     </body>
+    
 </html>
