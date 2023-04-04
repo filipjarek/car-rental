@@ -26,8 +26,8 @@ class UpdateInvoiceRequest extends FormRequest
         return [
 
             'number_invoice' => 'required|max:30',
-            'transaction_id' => 'required',
-            'company_id' => 'required',
+            'transaction_id' => 'required|nullable',
+            'company_id' => 'required|nullable',
             'invoice_date' => 'required|date|',
             'buyer' => 'required|max:30',
             'NIP' => 'string|digits:10|nullable',
@@ -35,6 +35,7 @@ class UpdateInvoiceRequest extends FormRequest
             'payment_method' => 'required|max:50',
             'service' => 'required|max:50',
             'VAT' => 'required|integer|digits:3',
+            
         ];
     }
 }

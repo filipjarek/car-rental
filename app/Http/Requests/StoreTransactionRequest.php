@@ -26,9 +26,9 @@ class StoreTransactionRequest extends FormRequest
         return [
 
             'transaction_date' => 'required|date',
-            'employee_id' => 'required',
-            'customer_id' => 'required',
-            'vehicle_id' => 'required',
+            'employee_id' => 'required|nullable',
+            'customer_id' => 'required|nullable',
+            'vehicle_id' => 'required|nullable',
             'rent_date' => 'required|date|nullable',
             'return_date' => 'required|date|nullable',
             'price' => 'required|integer|min:0',

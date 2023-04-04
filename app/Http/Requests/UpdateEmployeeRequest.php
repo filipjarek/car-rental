@@ -39,6 +39,7 @@ class UpdateEmployeeRequest extends FormRequest
             'zip_code' => 'required|max:6',
             'employment_date' => 'required|date|',
             'dismissal_date' => 'date|nullable',
+            
         ];
     }
 }

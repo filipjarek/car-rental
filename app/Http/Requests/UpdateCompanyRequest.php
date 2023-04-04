@@ -32,6 +32,7 @@ class UpdateCompanyRequest extends FormRequest
             'zip_code' => 'required|max:6',
             'city' => 'required|max:50',
             'bank_number' => 'required|max:50',
+            
         ];
     }
 }

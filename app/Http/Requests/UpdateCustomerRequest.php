@@ -32,6 +32,7 @@ class UpdateCustomerRequest extends FormRequest
             'phone' => 'numeric|digits:9|nullable',
             'address' => 'required|max:50',
             'zip_code' => 'required|max:6',
+            
         ];
     }
 }
