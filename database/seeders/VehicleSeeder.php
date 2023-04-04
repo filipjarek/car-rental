@@ -17,6 +17,18 @@ class VehicleSeeder extends Seeder
     {
         if(Vehicle::count() == 0)
         {
+            Vehicle::factory()->create([
+            
+                'name' => 'Audi A4',
+                'category' => 'car',
+                'color' => 'black',
+                'year' => '2017',
+                'capacity' => '1998',
+                'power' => '150',
+                'status' => 'N' 
+                
+            ]);
+
             Vehicle::factory(30)->create();
         }
     }
