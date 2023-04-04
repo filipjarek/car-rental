@@ -127,6 +127,13 @@
     </div>
 
     {{ __('Required fields are marked with an asterisk') }}.
+            
+            <div class="flex items-center justify-end px-4 py-3 text-right sm:px-6">    
+                <a href="{{ route('company.index') }}">
+                    <button type="button" class="shadow overflow-hidden inline-flex items-center px-4 py-3 bg-gray-300 dark:bg-gray-700 border border-transparent rounded-md font-semibold text-xs dark:text-white uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black disabled:opacity-25 transition duration-700 ease-in-out">
+                        {{ __('Cancel') }}
+                    </button>
+                </a>
 
                 <div class="flex items-center justify-end px-4 py-3 text-right sm:px-6">              
                     <button type="submit" class="shadow overflow-hidden inline-flex items-center px-4 py-3 bg-gray-300 dark:bg-gray-700 border border-transparent rounded-md font-semibold text-xs dark:text-white uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black disabled:opacity-25 transition duration-700 ease-in-out">
@@ -139,7 +146,8 @@
 
         <div class="mt-0 text-2xl">
                 
-                <div>
+                    <div>
+                </div>
             </div>
         </div>
     </div>
