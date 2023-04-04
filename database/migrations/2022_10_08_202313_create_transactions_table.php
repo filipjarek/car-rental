@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->timestamp('transaction_date');
-            $table->foreignId('employee_id')->constrained();
-            $table->foreignId('customer_id')->constrained();
-            $table->foreignId('vehicle_id')->constrained();
+            $table->foreignId('employee_id')->nullable();
+            $table->foreignId('customer_id')->nullable();
+            $table->foreignId('vehicle_id')->nullable();
             $table->timestamp('rent_date')->nullable();
             $table->timestamp('return_date')->nullable();
             $table->decimal('price');

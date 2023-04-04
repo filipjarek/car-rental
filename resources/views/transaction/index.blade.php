@@ -88,8 +88,8 @@
                     </tr>
                 </thead>
 
-                <tbody class="bg-white  divide-y divide-gray-200 dark:divide-gray-800">
-                    @foreach ($transactions as $transaction)
+                <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-800">
+                    @forelse ($transactions as $transaction)
                     <tr '@if (date('Y-m-d') > $transaction->return_date->format('d-m-Y') && $transaction->rent_status == 'N') ) background:rgba(255,0,0,0.2) @endif'>
                                        
                         <td class="px-6 py-4 whitespace-nowrap text-sm dark:bg-slate-700">
@@ -120,12 +120,11 @@
                          
                         <td class="px-6 py-4 whitespace-nowrap text-sm dark:bg-slate-700">
                             @if ($transaction->rent_status == 'Y')
-                                <span class="px-2 inline-flex  leading-5 font-semibold rounded-md bg-green-200  dark:bg-green-600">{{ __('Completed') }}</span>
+                                <span class="px-2 inline-flex leading-5 font-semibold rounded-md bg-green-200 dark:bg-green-600">{{ __('Completed') }}</span>
                             @else
-                                <span class="px-2 inline-flex  leading-5 font-semibold rounded-md bg-red-200  dark:bg-red-600">{{ __('Rented') }}</span>
+                                <span class="px-2 inline-flex leading-5 font-semibold rounded-md bg-red-200 dark:bg-red-600">{{ __('Rented') }}</span>
                             @endif                                                
                         </td>
-
 
                         <td class="px-6 py-4 whitespace-nowrap text-sm dark:bg-slate-700 font-medium">
 
@@ -143,14 +142,18 @@
                                     </button>                                
                                 </form>
 
-                        </td>                       
-                    </tr>
-                    @endforeach
-                                    
+                                @empty
+                                <h2 class="text-sm mb-8 font-semibold uppercase justify-center flex">
+                                    No Transactions
+                                </h2>
+                            </div>
+                        </td>
+                    </tr>    
+                    @endforelse     
                 </tbody>
             </table>
  
-                    <div class="px-6 py-4 whitespace-nowrap text-sm  divide-y divide-gray-200 dark:bg-gray-800 border border-gray-300  dark:border-gray-700">
+                    <div class="px-6 py-4 whitespace-nowrap text-sm divide-y divide-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-700">
                         {{ $transactions->links() }} 
                     </div>
                         
