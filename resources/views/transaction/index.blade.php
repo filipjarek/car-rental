@@ -31,9 +31,9 @@
     <div class="py-3">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-6">
             <div class="bg-slate-400 overflow-hidden shadow-xl sm:rounded-lg">
-                <div class="p-6 sm:px-20 bg-slate-100 dark:bg-gray-800 border border-gray-300  dark:border-gray-700 ">
+                <div class="p-6 sm:px-20 bg-slate-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700">
                
-    <div class="mt-0 text-2xl ">
+    <div class="mt-0 text-2xl">
         <div>
             <div>
                 <div>
@@ -43,21 +43,22 @@
 
          <div class="inline-flex place-items-center px-4 py-4">               
             <a class="float-right" href="{{ route('transaction.create') }}">
-                <button type="button"  class="  transform motion-safe:hover:scale-110 shadow overflow-hidden inline-flex items-center px-4 py-3 bg-gray-300 dark:bg-gray-700 border border-transparent rounded-md font-semibold text-xs dark:text-white uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black disabled:opacity-25 transition duration-700 ease-in-out" > {{ __('Add') }}
+                <button type="button" class="transform motion-safe:hover:scale-110 shadow overflow-hidden inline-flex items-center px-4 py-3 bg-gray-300 dark:bg-gray-700 border border-transparent rounded-md font-semibold text-xs dark:text-white uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-200 hover:text-white dark:hover:text-black disabled:opacity-25 transition duration-700 ease-in-out">
+                    {{ __('Add') }}
                 </button>
             </a>
         </div>       
     </div>
          
         <div class="rounded-md shadow overflow-hidden">
-            <table class=" rounded-md min-w-full divide-y divide-gray-200 dark:divide-gray-800 w-full border border-gray-300  dark:border-gray-500">
+            <table class="rounded-md min-w-full divide-y divide-gray-200 dark:divide-gray-800 w-full border border-gray-300 dark:border-gray-500">
                 <thead>
                     <tr>
-                        <th scope="col" width="50" class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-left text-xs font-medium  uppercase tracking-wider">
+                        <th scope="col" width="50" class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-left text-xs font-medium uppercase tracking-wider">
                             {{ __('ID') }}
                         </th>
 
-                        <th scope="col" width="50" class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-left text-xs font-medium  uppercase tracking-wider">
+                        <th scope="col" width="50" class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-left text-xs font-medium uppercase tracking-wider">
                             {{ __('ID') }} {{ __('Employee') }}
                         </th>
 
@@ -65,30 +66,30 @@
                             {{ __('Date') }}
                         </th>
 
-                        <th scope="col" class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-left text-xs font-medium  uppercase tracking-wider">
+                        <th scope="col" class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-left text-xs font-medium uppercase tracking-wider">
                             {{ __('Customer') }} / {{ __('Vehicle') }}
                         </th>
 
-                        <th scope="col" class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-left text-xs font-medium  uppercase tracking-wider">
+                        <th scope="col" class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-left text-xs font-medium uppercase tracking-wider">
                             {{ __('Rent') }} / {{ __('Return') }}
                         </th>
                                   
-                        <th scope="col" class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-left text-xs font-medium  uppercase tracking-wider">
+                        <th scope="col" class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-left text-xs font-medium uppercase tracking-wider">
                             {{ __('Rent Price per day') }}
                         </th>   
 
-                        <th scope="col" class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-left text-xs font-medium  uppercase tracking-wider">
+                        <th scope="col" class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-left text-xs font-medium uppercase tracking-wider">
                             {{ __('Status') }}
                         </th>
 
-                        <th scope="col" class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-left text-xs font-medium  uppercase tracking-wider">
+                        <th scope="col" class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-left text-xs font-medium uppercase tracking-wider">
                             {{ __('Actions') }}
                         </th>
                     </tr>
                 </thead>
 
                 <tbody class="bg-white  divide-y divide-gray-200 dark:divide-gray-800">
-                        @foreach ($transactions as $transaction)
+                    @foreach ($transactions as $transaction)
                     <tr '@if (date('Y-m-d') > $transaction->return_date->format('d-m-Y') && $transaction->rent_status == 'N') ) background:rgba(255,0,0,0.2) @endif'>
                                        
                         <td class="px-6 py-4 whitespace-nowrap text-sm dark:bg-slate-700">
@@ -96,16 +97,16 @@
                         </td>         
                         
                         <td class="px-6 py-4 whitespace-nowrap text-sm dark:bg-slate-700">
-                        #{{ $transaction->employee->id }} | @if($transaction->hasEmployee()){{ $transaction->employee->fullname }}@endif
+                            #{{ $transaction->employee->id }} | @if($transaction->hasEmployee()){{ $transaction->employee->fullname }}@endif
                         </td> 
 
                         <td class="px-6 py-4 whitespace-nowrap text-sm dark:bg-slate-700">
-                        {{ $transaction->transaction_date->format('d-m-Y') }}
+                            {{ $transaction->transaction_date->format('d-m-Y') }}
                         </td>
 
                         <td class="px-6 py-4 whitespace-nowrap text-sm dark:bg-slate-700">
                             {{ $transaction->customer->fullname }} <div>
-                             {{ $transaction->vehicle->name }}</div>
+                            {{ $transaction->vehicle->name }}</div>
                         </td>
 
                         <td class="px-6 py-4 whitespace-nowrap text-sm dark:bg-slate-700">
@@ -119,9 +120,9 @@
                          
                         <td class="px-6 py-4 whitespace-nowrap text-sm dark:bg-slate-700">
                             @if ($transaction->rent_status == 'Y')
-                                <span class="px-2 inline-flex  leading-5 font-semibold rounded-md  bg-green-200  dark:bg-green-600">{{ __('Completed') }}</span>
+                                <span class="px-2 inline-flex  leading-5 font-semibold rounded-md bg-green-200  dark:bg-green-600">{{ __('Completed') }}</span>
                             @else
-                                <span class="px-2 inline-flex  leading-5 font-semibold rounded-md  bg-red-200  dark:bg-red-600">{{ __('Rented') }}</span>
+                                <span class="px-2 inline-flex  leading-5 font-semibold rounded-md bg-red-200  dark:bg-red-600">{{ __('Rented') }}</span>
                             @endif                                                
                         </td>
 

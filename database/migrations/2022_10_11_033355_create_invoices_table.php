@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
             $table->string('number_invoice');
-            $table->foreignId('transaction_id')->constrained()->onDelete('cascade');
-            $table->foreignId('company_id')->constrained()->onDelete('cascade');
+            $table->foreignId('transaction_id')->nullable()->onDelete('cascade');
+            $table->foreignId('company_id')->nullable()->onDelete('cascade');
             $table->date('invoice_date');
             $table->string('buyer');
             $table->string('NIP', 10)->nullable();
