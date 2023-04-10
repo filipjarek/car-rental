@@ -955,14 +955,13 @@
   "INVOICE VAT NR": "FAKTURA VAT NR",
   "Date of issue:": "Data wystawienia:",
   "Vehicle rental date:": "Data wynajmu pojazdu:",
-  "to": "do",
   "Vehicle return date:": "Data zwrotu pojazdu:",
   "Payment method:": "Sposób płatności:",
   "Date of payment:": "Termin płatności:",
   "Site:": "Strona:",
   "Company name:": "Nazwa firmy:",
   "Bank account number:": "Numer konta bankowego:",
-  "Adress:": "adres:",
+  "adress:": "adres:",
   "Phone:": "Telefon:",
   ":": "Numer konta bankowego:",
   "Adress:": "Adres:",
@@ -981,10 +980,7 @@
   "Together to pay:": "Razem do zapłaty:",
   "Including tax:": "W tym podatek:",
   "To pay:": "Do zapłaty:",
-  "The name of the service:": "Nazwa usługi:"
-
-  
-
-
-  
+  "The name of the service:": "Nazwa usługi:",
+  "ISSUER": "WYSTAWCA:",
+  "BUYER": "NABYWCA:"
 }
