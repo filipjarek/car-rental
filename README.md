@@ -6,6 +6,7 @@
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
+* [Testing](#testing)
 
 ## Technologies Used
     
@@ -86,6 +87,12 @@ Open link in your browser: http://localhost:8000:
 
 #### Admin credentails
 ```
-email: admin@gmail.com
+e-mail: admin@gmail.com
 password: password
 ```
+## Testing
+```
+$ ./vendor/phpunit/phpunit/phpunit
+$ php artisan test
+```
+Run the tests using PHPUnit package
